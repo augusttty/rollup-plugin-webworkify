@@ -29,7 +29,7 @@ export default (options = {}) => {
       let target
       if (importee === HELPERS_ID) {
         return HELPERS_FILE
-      } else if (target = resolveWorkerImportee(importee, importer)) {
+      } else if (target === resolveWorkerImportee(importee, importer)) {
         paths.set(target, importee)
         return target
       }

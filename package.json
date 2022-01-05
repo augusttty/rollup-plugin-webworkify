@@ -1,46 +1,23 @@
 {
-  "name": "rollup-plugin-webworkify",
+  "name": "rollup-plugin-webworkify-fjo",
   "version": "0.0.4",
   "description": "Bundles web worker alongside your main.",
-  "author": "Allex Wang <allex.wxn@gmail.com>",
   "main": "lib/index.js",
-  "repository": "allex/rollup-plugin-webworkify",
+  "repository": "anomanm/rollup-plugin-webworkify-fjo",
   "scripts": {
-    "build": "npm run lint:fix && rollup-bundle --config ./.fssrc.js",
+    "build": "rollup --config rollup.config.js",
     "prepare": "npm run build",
-    "lint": "standard",
-    "lint:fix": "standard --fix",
-    "test": "npm run lint"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "rollup",
-    "rollup-plugin",
-    "webworker",
-    "worker"
-  ],
-  "dependencies": {
-    "rollup-pluginutils": "^2"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/plugin-external-helpers": "^7.0.0-beta.47",
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.47",
-    "@babel/preset-env": "^7.0.0-beta.47",
-    "@babel/runtime": "^7.0.0-beta.49",
-    "@fedor/standard": "latest",
-    "babel-core": "next",
-    "babel-plugin-transform-decorators-legacy": "latest",
-    "estree-walker": "^0.5.1",
-    "magic-string": "^0.22.4",
-    "resolve": "^1.5.0",
-    "rollup-plugin-babel": "beta",
-    "rollup-plugin-terser": "^1.0.1",
-    "rollup-worker": "next"
-  },
-  "license": "MIT",
-  "standard": {
-    "ignore": [
-      "src/index2.js"
-    ]
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "resolve": "^1.21.0",
+    "rollup": "^2.63.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-pluginutils": "^2.8.2"
   }
 }

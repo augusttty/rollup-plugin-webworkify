@@ -10,4 +10,3 @@ export function getName (id) {
     return makeLegalIdentifier(segments[segments.length - 1])
   }
 }
-

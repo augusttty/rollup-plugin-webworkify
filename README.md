@@ -1,4 +1,6 @@
-# rollup-plugin-webworkify
+# rollup-plugin-webworkify-fjo
+forked from [rollup-plugin-webworkify](https://github.com/allex/rollup-plugin-webworkify)
+## fix worker javascript-obfuscator bundle issues.
 
 Bundles a single JS file alongside your main source code as the source for a
 Web Worker. Provides a fallback for running the code in the main thread if the

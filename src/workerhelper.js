@@ -5,11 +5,11 @@
  * MIT Licensed
  */
 
-const win = window,
-  BlobBuilder = win.BlobBuilder || win.WebKitBlobBuilder || win.MozBlobBuilder || win.MSBlobBuilder,
-  URL = win.URL || win.webkitURL || win.mozURL || win.msURL,
-  SCRIPT_TYPE = 'application/javascript',
-  TARGET = (typeof Symbol === 'undefined') ? '__t' + +new Date() : Symbol() // eslint-disable-line symbol-description
+const win = window
+const BlobBuilder = win.BlobBuilder || win.WebKitBlobBuilder || win.MozBlobBuilder || win.MSBlobBuilder
+const URL = win.URL || win.webkitURL || win.mozURL || win.msURL
+const SCRIPT_TYPE = 'application/javascript'
+const TARGET = (typeof Symbol === 'undefined') ? '__t' + +new Date() : Symbol() // eslint-disable-line symbol-description
 
 let Worker = win.Worker // eslint-disable-line no-native-reassign
 
@@ -77,7 +77,7 @@ function WorkerEmitter (target, interObj) {
     }
   }
   target.removeEventListener = function (type, fn) {
-    let arr = listeners[type], index
+    const arr = listeners[type]; let index
     if (arr && (index = arr.indexOf(fn)) !== -1) {
       arr.splice(index, 1)
       if (!arr.length) delete listeners[type]
@@ -116,9 +116,9 @@ function WorkerEmitter (target, interObj) {
 
 // Test Worker capabilities
 if (Worker) {
-  let testWorker,
-    objURL = createSourceObject('self.onmessage = function () {}'),
-    testArray = new Uint8Array(1)
+  let testWorker
+  const objURL = createSourceObject('self.onmessage = function () {}')
+  const testArray = new Uint8Array(1)
 
   try {
     // No workers via blobs in Edge 12 and IE 11 and lower :(
@@ -142,9 +142,9 @@ if (Worker) {
 function createSourceObject (str) {
   const type = SCRIPT_TYPE
   try {
-    return URL.createObjectURL(new Blob([str], { type }))
+    return URL.createObjectURL(new win.Blob([str], { type }))
   } catch (e) {
-    let blob = new BlobBuilder()
+    const blob = new BlobBuilder()
     blob.append(str)
     return URL.createObjectURL(blob.getBlob(type))
   }
