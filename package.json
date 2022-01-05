@@ -1,17 +1,22 @@
 {
   "name": "rollup-plugin-webworkify-fjo",
-  "version": "0.0.4",
+  "version": "0.0.41",
   "description": "Bundles web worker alongside your main.",
   "main": "lib/index.js",
-  "repository": "anomanm/rollup-plugin-webworkify-fjo",
+  "repository": "augusttty/rollup-plugin-webworkify",
   "scripts": {
     "build": "rollup --config rollup.config.js",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "webworker",
+    "worker"
+  ],
+  "author": "augusttty",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
